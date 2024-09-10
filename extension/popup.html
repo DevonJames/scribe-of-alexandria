@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Alexandria Extension</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="popup-container">
+        <h2>Alexandria Library</h2>
+        <div class="tab">
+            <button class="tablinks" id="defaultOpen" onclick="openTab(event, 'Article')">Article</button>
+            <button class="tablinks" onclick="openTab(event, 'Related')">Related</button>
+            <button class="tablinks" onclick="openTab(event, 'Settings')">Settings</button>
+        </div>
+
+        <!-- Article Tab -->
+        <div id="Article" class="tabcontent">
+            <h3>Save Article</h3>
+            <p>Submit the current article for archiving.</p>
+            <button id="save-article-btn">Save Article</button>
+        </div>
+
+        <!-- Related Tab -->
+        <div id="Related" class="tabcontent">
+            <h3>Related Articles</h3>
+            <p>No related articles yet.</p>
+        </div>
+
+        <!-- Settings Tab -->
+        <div id="Settings" class="tabcontent">
+            <h3>Preferences</h3>
+            <label><input type="checkbox" id="option-voice" checked> Voice Summary</label><br>
+            <label><input type="checkbox" id="option-text"> Fast Reading Mode (Spritz)</label><br>
+            <label><input type="checkbox" id="option-both"> Both</label>
+        </div>
+
+        <button id="history-btn">History</button>
+
+        <script src="popup.js"></script>
+    </div>
+</body>
+</html>

@@ -1,0 +1,18 @@
+{
+    "manifest_version": 2,
+    "name": "Scribe of Alexandria Browser Extension",
+    "version": "1.0",
+    "description": "Preserve and archive web articles in the digital library of Alexandria.",
+    "permissions": [
+      "tabs",
+      "activeTab",
+      "storage"
+    ],
+    "browser_action": {
+      "default_popup": "popup.html",
+      "default_icon": "icon.png"
+    },
+    "icons": {
+      "128": "icon.png"
+    }
+  }
