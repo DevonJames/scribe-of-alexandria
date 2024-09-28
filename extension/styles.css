@@ -1,0 +1,602 @@
+/* Styling for Article Content */
+/* #content {
+    width: 100%;
+    padding: 12px;
+    margin: 8px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+    line-height: 1.4;
+    resize: none; 
+    overflow-y: auto; 
+} */
+
+/* Styling for the Expand Button */
+#toggle-content-btn {
+    padding: 6px 12px;  /* Smaller padding to reduce the button size */
+    margin: 8px 0;
+    background-color: #6c757d;  /* Blueish-grey background */
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 12px;  /* Slightly smaller font */
+    cursor: pointer;
+    /* width: auto;  Auto width to make the button smaller */
+}
+
+/* Expand Button Styling */
+#toggle-content-btn {
+    padding: 6px 12px;
+    background-color: #6c757d;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 12px;
+    cursor: pointer;
+    margin-top: 10px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#toggle-content-btn:hover {
+    background-color: #5a6268;  /* Darker shade of blueish-grey on hover */
+}
+
+/* Styling for the Save Article Button */
+#save-article-btn {
+    padding: 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 14px;
+    width: 100%;  /* Full-width button */
+}
+
+#save-article-btn, #toggle-content-btn {
+    margin: 12px 0;  /* Add a bit more space between them */
+    padding: 10px;  /* Ensure consistent padding */
+}
+
+#save-article-btn:hover {
+    background-color: #0056b3;  /* Darker blue on hover */
+}
+
+/* Optional: Faded background while loading */
+#loading-backdrop {
+    position: absolute;
+    top: -2.5vw;
+    left: -5vw;
+    width: 110vw;  /* Ensure the backdrop covers the entire viewport width */
+    height: 110%;
+    background-color: rgba(0, 0, 0, 0.3);  /* Dark semi-transparent background */
+    z-index: 998;
+    /* display: none; */
+}
+
+/* Styling for Headline */
+#headline {
+    width: 100%;
+    max-width: 100%;
+    padding: 12px;
+    margin: 8px 0;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: bold;
+    background-color: #f9f9f9;
+    box-sizing: border-box; /* Ensure padding is included in width */
+    height: auto;
+    min-height: 50px;  /* Adjust height to fit 1-2 lines */
+    max-height: 80px;  /* Max height for 2 lines */
+    overflow-y: hidden; /* Prevent scrolling */
+    white-space: normal; /* Keep text in a single line */
+    text-overflow: ellipsis; /* Add ellipsis (...) if overflow */
+}
+
+/* Flex container for Byline and Date */
+.flex-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;  /* Keep spacing between inputs */
+    width: 100%;  /* Ensure the container is the full width */
+    box-sizing: border-box;  /* Include padding/margins in width */
+}
+
+/* Inputs for Byline and Date */
+.flex-container input {
+    width: 48%;  /* Adjust input widths to fit container */
+    padding: 8px;
+    background-color: #f9f9f9;  /* Subtle background */
+    border: 1px solid #ddd;  /* Lightened border */
+    border-radius: 4px;
+    box-sizing: border-box;  /* Ensure the width accounts for padding */
+}
+
+/* URL Field */
+#url {
+    background-color: #f7f7f7;
+    border: 1px solid #ccc;
+    overflow: hidden;  /* Prevent overflow */
+    white-space: nowrap;
+    text-overflow: ellipsis;  /* Ellipsis for overflowed text */
+}
+
+/* Other fields */
+input {
+    width: 100%;
+    padding: 8px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    margin: 6px 0;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background-color: #f9f9f9;
+    font-size: 14px;
+    box-sizing: border-box;
+}
+
+/* Description and Content Areas */
+textarea {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background-color: #f9f9f9;
+    resize: none;
+    box-sizing: border-box;
+    overflow-y: auto;
+}
+
+/* Description Styling */
+#description {
+    width: 100%;
+    height: auto;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background-color: #f9f9f9;
+    box-sizing: border-box; /* Ensure padding is included in width */
+    min-height: 100px; /* Adjust height to fit content */
+    max-height: 150px; /* Prevent excessive height */
+    overflow-y: auto; /* Allow scrolling if content overflows */
+}
+
+
+/* Styling for Placeholder Text */
+::placeholder {
+    color: #999;
+    font-family: 'Arial', sans-serif;
+    font-size: 14px;
+}
+
+/* General Popup Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 10px;
+    background-color: #f0f0f0;
+    color: #333;
+}
+
+h2 {
+    text-align: center;
+    font-family: 'Cinzel', serif; /* Roman-inspired font */
+    color: #333;
+    font-size: 22px;  /* Increase font size */
+    font-weight: bold;  /* Make it bold */
+    line-height: 1.2;  /* Stack lines closely */
+    margin: 0px 0; /* Add space above and below */
+}
+
+/* Ensure the app name breaks into two lines */
+h2::after {
+    /* content: "Scribe of Alexandria"; */
+    display: block;
+    text-align: center;
+    font-size: inherit; /* Inherit from h2 */
+}
+
+/* Styling for "Scribe of" */
+.scribe-of {
+    font-family: 'Cinzel', serif; /* Roman-inspired font */
+    font-size: 18px;
+    font-weight: normal; /* Make this part more subtle */
+    color: #333; /* Darker color */
+    text-align: center;
+    letter-spacing: 10px; /* Extra space between letters for effect */
+    display: block;
+    margin: 0;  /* Remove any margin around the title */
+    padding: 0; /* Remove padding */
+    line-height: 1.1; /* Tighten the space between lines */
+    margin-bottom: 0px; /* Add some spacing before "ΛLΞXΛNDRIΛ" */
+    text-transform: uppercase; /* Ensure it's all uppercase */
+}
+
+/* Styling for "ΛLΞXΛNDRIΛ" */
+.alexandria {
+    font-family: 'Helvetica Neue', Arial, sans-serif; /* Helvetica Neue font */
+    font-size: 26px;  /* Larger font size for emphasis */
+    font-weight: 200; /* Ultra-light weight */
+    color: #333; /* Darker shade for more contrast */
+    text-align: center;
+    letter-spacing: 5px; /* Extra space between letters for effect */
+    text-transform: uppercase; /* Ensure it's all uppercase */
+}
+
+.popup-container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 350px;
+    /* max-width: 800px; */
+    margin: 0 auto;
+    height: 100vh; /* Full screen height */
+    box-sizing: border-box;
+}
+
+/* Styling for the Tab Buttons */
+.tab {
+    overflow: hidden;
+    border-bottom: 1px solid #ccc;
+    display: flex; /* Align tabs horizontally */
+    justify-content: space-between;
+    z-index: 10;
+}
+
+.tab button {
+    background-color: inherit;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 10px;
+    padding-top: 10px;  /* Reduce padding at the top */
+    padding-bottom: 10px; /* Reduce padding at the bottom */
+    font-family: 'Press Start 2P', cursive; /* Pixelated font */
+    font-size: 12px;
+    transition: 0.3s;
+    color: #333;
+}
+
+.tab button.active {
+    background-color: #007bff; /* Highlight the active tab */
+    color: white;
+    border-bottom: 2px solid #333; /* Make it look like a tab */
+}
+
+.tab button:hover {
+    background-color: #ddd;
+}
+
+/* Tab Content */
+.tabcontent {
+    width:350px;
+    height: 100%;
+    display: none; /* Hide all content by default */
+    padding: 10px;
+    padding-top: 0px;  
+    padding-bottom: 0px; 
+    background-color: #f0f0f0;  /* Light grey background for the content */
+
+    border-radius: 4px;  /* Soft corners */
+
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);  /* Subtle shadow for the content area */
+z-index: 1;
+position: relative;
+}
+
+/* Active Tab Content */
+.tabcontent.active {
+    display: block;
+}
+
+/* Button Styling */
+button {
+    width: 100%;
+    padding: 8px;
+    margin: 2px 0;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 12px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+/* Scroll Loader Animation */
+.loading svg {
+    animation: spin 1.5s linear infinite;
+    display: block;
+    margin: 0 auto;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* Position the loading indicator over the form */
+#loading-indicator {
+    position: absolute;
+    top: 50%;  /* Center vertically */
+    left: 50%; /* Center horizontally */
+    transform: translate(-50%, -50%);
+    z-index: 999;  /* Ensure it appears on top */
+    background-color: rgba(255, 255, 255, 0.8);  /* Optional: white semi-transparent background */
+    padding: 20px;
+    border-radius: 10px;
+    /* display: none;  Hidden by default */
+}
+
+#loading-indicator svg {
+    animation: spin 1.5s linear infinite;  /* Apply the spin animation */
+    display: block;
+    margin: 0 auto;
+}
+
+/* General styling for hidden class */
+.hidden {
+    display: none;
+}
+
+/* Styling for Related Articles List */
+.related-article {
+    display: flex;
+    align-items: flex-start;
+    gap: 5px;  /* Add space between the checkbox and content */
+    margin: 5px 0;  /* Add margin between articles */
+    padding: 8px;
+    border: 1px solid #ccc;  /* Add a border for better separation */
+    border-radius: 4px;
+    background-color: #f9f9f9;
+    z-index: 1;
+    position: relative;
+}
+
+/* Styling for the article title */
+.related-article h4 {
+    margin: 0;
+    font-size: 14px;  /* Adjust font size */
+    font-weight: bold;
+}
+
+/* Styling for article description */
+.related-article p {
+    font-size: 11px;
+    color: #666;
+    margin: 4px 0;  /* Add a little space below the description */
+}
+
+/* Styling for the published date */
+.related-article small {
+    font-size: 11px;
+    color: #999;
+}
+
+/* Styling for the checkbox */
+.related-article input[type="checkbox"] {
+    transform: scale(1.2);  /* Make the checkbox slightly larger */
+    cursor: pointer;
+}
+
+/* Link styling */
+.related-article a {
+    font-size: 12px;  /* Smaller font for the "Read more" link */
+    color: #007bff;
+}
+
+.reader-box {
+    width: 100%;
+    height: 100px;
+    background-color: #f0f0f0; /* Light background for contrast */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 36px;  /* Increase font size */
+    font-family: Arial, sans-serif;  /* Readable font */
+    color: #333;  /* Darker text color */
+    border-radius: 8px;
+    margin: 20px 0;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);  /* Soft shadow for depth */
+  }
+
+  /* button {
+    background-color: #4285F4;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 11px;
+    margin: 10px 5px;
+    border-radius: 8px;
+    cursor: pointer;
+  } */
+
+  button:hover {
+    background-color: #357ae8;
+  }
+
+  input[type="range"] {
+    width: 100%;
+    margin: 20px 0;
+  }
+
+
+
+/* Domain Field */
+#domain {
+    width: 100%;
+    height: auto;
+    padding: 12px;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    margin: 8px 0;
+    background-color: transparent; /* Transparent background */
+    border: none; /* Remove border */
+    font-size: 14px;
+    text-align: right; /* Align text to the right */
+    color: #333; /* Adjust font color if needed */
+    box-sizing: border-box;
+}
+
+/* Fixed Bottom Button Row */
+.sticky-button-row {
+    position: relative;
+    bottom: 70px; /* Make space for the footer */
+    width: 100%;
+    max-width: 400px;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    background-color: white;
+    z-index: 20; /* Ensure it stays on top */
+}
+
+/* Archive and Brief Me Buttons */
+.sticky-button-row button {
+    width: 48%;
+    padding: 12px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 12px;
+    cursor: pointer;
+}
+
+.sticky-button-row button:hover {
+    background-color: #0056b3;
+}
+
+
+/* Reading Container Popup */
+.reading-container {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    padding: 20px;
+    background-color: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    z-index: 1001;
+    text-align: center;
+}
+
+.reading-container.active {
+    display: block;
+}
+
+/* Dimmed Background */
+.dim-background {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+}
+
+.dim-background.active {
+    display: block;
+}
+
+/* Progress Bar */
+.progress-bar {
+    width: 100%;
+    height: 10px;
+    background-color: #ddd;
+    margin: 10px 0;
+    border-radius: 5px;
+}
+
+.progress-bar-inner {
+    height: 100%;
+    background-color: #007bff;
+    width: 0%; /* Dynamically update */
+    border-radius: 5px;
+}
+
+/* Footer */
+footer {
+    background-color: #333;
+    padding: 10px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    z-index: 9; /* Ensure it's below the sticky buttons */
+
+}
+
+footer .scribe-of,
+footer .alexandria {
+    color: #d3d3d3; /* Light grey text */
+}
+/* Headline and description full width */
+#headline,
+#description {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 12px;
+    margin: 8px 0;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background-color: #f9f9f9;
+}
+
+/* Domain transparent with no border */
+#domain {
+    width: 100%;
+    height: auto;
+    padding: 12px;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    margin: 8px 0;
+    background-color: transparent;
+    border: none;
+    font-size: 14px;
+    text-align: right;
+    color: #333;
+    box-sizing: border-box;
+}
+
+/* Hidden reading container */
+.reading-container {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    padding: 20px;
+    background-color: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    z-index: 1001;
+    text-align: center;
+}
+
+.reading-container.active {
+    display: block;
+}

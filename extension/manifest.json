@@ -1,18 +1,32 @@
 {
     "manifest_version": 2,
-    "name": "Scribe of Alexandria Browser Extension",
+    "name": "Scribes of Alexandria",
     "version": "1.0",
-    "description": "Preserve and archive web articles in the digital library of Alexandria.",
     "permissions": [
-      "tabs",
       "activeTab",
-      "storage"
+      "tabs",
+      "background",
+      "http://localhost:3005/*",
+      "http://*/",
+      "https://*/"
+    ],
+    "content_security_policy": "script-src 'self' 'unsafe-eval' http://localhost:3005; object-src 'self'",
+    "background": {
+      "scripts": ["background.js"],
+      "persistent": false
+    },
+    "web_accessible_resources": [
+      "jetzt.js"
+    ],
+    "content_scripts": [
+      {
+        "matches": ["<all_urls>"],
+        "js": ["contentScript.js"]
+      }
     ],
     "browser_action": {
       "default_popup": "popup.html",
+      "default_title": "Scribe of Alexandria",
       "default_icon": "icon.png"
-    },
-    "icons": {
-      "128": "icon.png"
     }
   }

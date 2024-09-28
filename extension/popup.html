@@ -2,23 +2,63 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Alexandria Extension</title>
+    <title>Scribes of ΛLΞXΛNDRIΛ</title>
     <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Press+Start+2P&display=swap&family=Poppins:wght@200&display=swap" rel="stylesheet">
+    <!-- <script src="jetzt.js"></script> -->
 </head>
 <body>
     <div class="popup-container">
-        <h2>Alexandria Library</h2>
+        <!-- <h2 class="app-title">
+            <span class="scribe-of">Scribes of</span> 
+            <span class="alexandria">ΛLΞXΛNDRIΛ</span>
+        </h2> -->
+        
+        <!-- Loading Backdrop (Optional) -->
+        <div id="loading-backdrop" class="hidden"></div>
+
+        <!-- Loading Indicator -->
+        <div id="loading-indicator" class="hidden">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" width="50" height="50">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M12 22C6.477 22 2 17.523 2 12C2 6.477 6.477 2 12 2C17.523 2 22 6.477 22 12C22 17.523 17.523 22 12 22ZM10 12L7 9L7 7L17 7L17 9L14 12L17 15L17 17L7 17L7 15L10 12ZM9 9L12 12L15 9L9 9ZM15 15L9 15L12 12L15 15Z" fill="black"/>
+            </svg>
+        </div>
+
+        <!-- Tabs -->
         <div class="tab">
-            <button class="tablinks" id="defaultOpen" onclick="openTab(event, 'Article')">Article</button>
-            <button class="tablinks" onclick="openTab(event, 'Related')">Related</button>
-            <button class="tablinks" onclick="openTab(event, 'Settings')">Settings</button>
+            <button class="tablinks" id="defaultOpen">Article</button>
+            <button class="tablinks">Related</button>
+            <button class="tablinks">Settings</button>
         </div>
 
         <!-- Article Tab -->
         <div id="Article" class="tabcontent">
-            <h3>Save Article</h3>
-            <p>Submit the current article for archiving.</p>
-            <button id="save-article-btn">Save Article</button>
+            <!-- Headline (can expand up to 3 lines) -->
+            <input type="text" id="headline" placeholder="Article headline" readonly><br>        
+            
+            <!-- Description -->
+            <textarea id="description" placeholder="Short article description"></textarea><br>
+            
+            <div class="hidden">
+                <!-- Date and Byline (side by side using flexbox) -->
+                <div class="flex-container">
+                    <input type="text" id="byline" placeholder="Author">
+                    <input type="text" id="publish-date" placeholder="Publish Date">
+                </div>
+            <!-- Tags -->
+            
+            <!-- URL -->
+            
+            <!-- Article Content -->
+            <textarea id="content" rows="2" placeholder="Article content"></textarea><br>
+            <button id="toggle-content-btn">Expand</button>
+            <input type="text" id="url" placeholder="URL" readonly><br>
+            
+            <input type="text" id="tags" placeholder="Comma-separated tags"><br>
+        </div>
+        <input type="text" id="domain" placeholder="Domain" readonly><br>
+        <!-- Save Article Button -->
+            <!-- <button id="save-article-btn">Save Article</button> -->
         </div>
 
         <!-- Related Tab -->
@@ -27,17 +67,48 @@
             <p>No related articles yet.</p>
         </div>
 
+        <!-- Sticky Bottom Buttons -->
+        <div class="sticky-button-row">
+            <!-- <button id="archive-btn">Archive This</button> -->
+            <button id="brief-btn">Brief Me</button>
+        </div>
+
+        <!-- Reading Container for Brief Me functionality -->
+        <div class="dim-background"></div>
+        <div class="reading-container" id="reading-container">
+            <div id="text-content">Content being read...</div>
+            <button id="pause-btn" style="display: none;">Pause</button>
+            <button id="resume-btn" style="display: none;">Resume</button>
+            <div class="progress-bar">
+                <div class="progress-bar-inner" id="progress-bar"></div>
+            </div>
+        </div>
         <!-- Settings Tab -->
         <div id="Settings" class="tabcontent">
             <h3>Preferences</h3>
-            <label><input type="checkbox" id="option-voice" checked> Voice Summary</label><br>
-            <label><input type="checkbox" id="option-text"> Fast Reading Mode (Spritz)</label><br>
-            <label><input type="checkbox" id="option-both"> Both</label>
+            <p>Briefing Options:</p>
+            <label><input type="checkbox" id="option-voice"> Voice </label><br>
+            <label><input type="checkbox" id="option-text"> Screen </label><br>
+            <p>LLM Model:</p>
+            // pull down menu of Options
+            <select id="llm-model">
+                <option value="llama2-plato">405B parameter LLaMA 2 Fine Tuned on Plato</option>
+                <option value="llama2-socrates">405B parameter LLaMA 2 Fine Tuned on Socrates</option>
+            </select>
         </div>
-
-        <button id="history-btn">History</button>
-
-        <script src="popup.js"></script>
+        
     </div>
+
+<!-- Footer with title -->
+<footer class="footer">
+    <h2 class="app-title">
+        <span class="scribe-of">Scribes of</span> 
+        <span class="alexandria">ΛLΞXΛNDRIΛ</span>
+    </h2>
+</footer>
+
+    <!-- <button id="history-btn">History</button> -->
+
+    <script src="popup.js"></script>
 </body>
 </html>
